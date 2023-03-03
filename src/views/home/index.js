@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { HeaderContext } from "../components/Header";
 import { DivWithImage } from "../../theme";
+import Carrousel from "./components/Carousel";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { fetchDeluxeCards, fetchRecentCards } from "../../redux/actions/card";
+import { deluxeCardsSel, isFetchingLastCardsSel, isFetchingDeluxeCardsSel, lastCardsSel } from "../../redux/selectors";
+import Section from "./components/Section";
 
 const CardList = styled(Link)`
     background-color: rgb(225, 29, 53); 
@@ -21,9 +26,16 @@ const BannerContent = styled.div`
 `
 
 const Home = () => {
+    const dispatch = useDispatch();
+    const lastCards = useSelector(lastCardsSel, shallowEqual);
+    const isFetchingLastCards = useSelector(isFetchingLastCardsSel, shallowEqual);
+    const deluxeCards = useSelector(deluxeCardsSel, shallowEqual);
+    const isFetchingDeluxeCards = useSelector(isFetchingDeluxeCardsSel, shallowEqual);
     const ref = useRef();
     const headerRef = useContext(HeaderContext);
     useEffect(() => {
+        dispatch(fetchRecentCards());
+        dispatch(fetchDeluxeCards());
         const setBannerImageTop = () => {
             const headerHeight = headerRef.current.offsetHeight;
             ref.current.style.top = `-${headerHeight}px`;
@@ -55,9 +67,13 @@ const Home = () => {
                     </div>
                 </BannerContent>
             </Banner>
-            <DivWithImage className="col-lg-12 col-sm-12 py-5">
+            <div className="col-lg-12 col-sm-12 py-5">
                 <h4 className="text-center">En mercado TCG lorem ipsum dolor sit amet.</h4>
-            </DivWithImage>
+            </div>
+            {!isFetchingLastCards && lastCards.length > 0 && <Section section="Agregado recientemente" bgImage="dragon-bckg.jpg" cards={lastCards} />}
+            {!isFetchingDeluxeCards && deluxeCards.length > 0 && <Section section="Edicion de lujo" bgImage="bckg.jpg" cards={deluxeCards} bootstrapClasses={["mt-5"]} />}
+            <img src="/banner.jpg" alt="" className="img-fluid my-5" />
+
         </>
     )
 };
