@@ -5,8 +5,8 @@ import { HeaderContext } from "../components/Header";
 import { DivWithImage } from "../../theme";
 import Carrousel from "./components/Carousel";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
-import { fetchDeluxeCards, fetchRecentCards } from "../../redux/actions/card";
-import { deluxeCardsSel, isFetchingLastCardsSel, isFetchingDeluxeCardsSel, lastCardsSel } from "../../redux/selectors";
+import { fetchCards, fetchDeluxeCards, fetchRecentCards } from "../../redux/actions/card";
+import { isFetchingLastCardsSel, isFetchingDeluxeCardsSel, cardsInfoSel, isFetchingCardsSel } from "../../redux/selectors";
 import Section from "./components/Section";
 
 const CardList = styled(Link)`
@@ -27,15 +27,16 @@ const BannerContent = styled.div`
 
 const Home = () => {
     const dispatch = useDispatch();
-    const lastCards = useSelector(lastCardsSel, shallowEqual);
+    const { lastCards, deluxeCards, cards } = useSelector(cardsInfoSel, shallowEqual);
     const isFetchingLastCards = useSelector(isFetchingLastCardsSel, shallowEqual);
-    const deluxeCards = useSelector(deluxeCardsSel, shallowEqual);
-    const isFetchingDeluxeCards = useSelector(isFetchingDeluxeCardsSel, shallowEqual);
+    const isFetchingDeluxeCards = useSelector(isFetchingDeluxeCardsSel, shallowEqual)
+    const isFetchingCards = useSelector(isFetchingCardsSel);
     const ref = useRef();
     const headerRef = useContext(HeaderContext);
     useEffect(() => {
         dispatch(fetchRecentCards());
         dispatch(fetchDeluxeCards());
+        dispatch(fetchCards());
         const setBannerImageTop = () => {
             const headerHeight = headerRef.current.offsetHeight;
             ref.current.style.top = `-${headerHeight}px`;
@@ -73,7 +74,7 @@ const Home = () => {
             {!isFetchingLastCards && lastCards.length > 0 && <Section section="Agregado recientemente" bgImage="dragon-bckg.jpg" cards={lastCards} />}
             {!isFetchingDeluxeCards && deluxeCards.length > 0 && <Section section="Edicion de lujo" bgImage="bckg.jpg" cards={deluxeCards} bootstrapClasses={["mt-5"]} />}
             <img src="/banner.jpg" alt="" className="img-fluid my-5" />
-
+            {!isFetchingCards && cards.length > 0 && <Section section="Consulta nuestros ultimos articulos" cards={cards} bootstrapClasses={["mt-5"]} />}
         </>
     )
 };

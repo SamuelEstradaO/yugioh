@@ -17,7 +17,7 @@ const Section = ({ section = "", cards, bgImage, bootstrapClasses = [] }) => {
     return (
         <DivWithImage bgImage={bgImage} className={`${[...bootstrapClasses]}`}>
             <Div className="container p-4">
-                <h3 className="mt-2">{section}</h3>
+                {section.length > 0 && <h3 className="mt-2">{section}</h3>}
                 {cards.lenght > 4 && <Carousel>
 
                 </Carousel>}
