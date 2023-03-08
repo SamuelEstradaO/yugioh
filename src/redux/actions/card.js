@@ -1,6 +1,6 @@
 import { createAction } from "@reduxjs/toolkit";
 
-import { data } from "../../data/cardData";
+import { data } from "../../data/Data";
 
 export const startFetchingLastCards = createAction("START_FETCHING_LAST_CARDS");
 export const successFetchingLastCards = createAction("SUCCESS_FETCHING_LAST_CARDS");

@@ -450,3 +450,9 @@ export const data = [
         "deluxe": null
     }
 ];
+
+export const reviewData = {
+    "user": "Nomen Nescio",
+    "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quasi, adipisci fuga quas quia facere nam corporis ad ea sit odit labore repellat autem aliquam voluptatibus dignissimos eaque est?",
+    "user-pic": "robot-user.jpg"
+}
