@@ -8,6 +8,8 @@ import { fetchCards, fetchDeluxeCards, fetchRecentCards } from "../../redux/acti
 import { isFetchingLastCardsSel, isFetchingDeluxeCardsSel, cardsInfoSel, isFetchingCardsSel } from "../../redux/selectors";
 import Section from "./components/Section";
 import Reviews from "./components/Reviews";
+import Contact from "./components/Contact";
+import Footer from "../components/Footer";
 
 const CardList = styled(Link)`
     background-color: rgb(225, 29, 53); 
@@ -81,6 +83,8 @@ const Home = () => {
             {!isFetchingCards && cards.length > 0 && <Section section="Las más buscadas" bgImage="thumb-1920-465708.jpg" cards={cards.slice(0, 12)} bootstrapClasses={["mt-5"]} />}
             {!isFetchingCards && cards.length > 0 && <Section section="Consulta nuestros ultimos articulos" cards={cards.slice(0, 12)} bootstrapClasses={["mt-5"]} />}
             <Reviews />
+            <Contact />
+            <Footer />
         </>
     )
 };

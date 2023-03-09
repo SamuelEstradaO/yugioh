@@ -451,8 +451,16 @@ export const data = [
     }
 ];
 
-export const reviewData = {
+export const reviewsData = [{
     "user": "Nomen Nescio",
     "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quasi, adipisci fuga quas quia facere nam corporis ad ea sit odit labore repellat autem aliquam voluptatibus dignissimos eaque est?",
     "user-pic": "robot-user.jpg"
-}
+}, {
+    "user": "Nomen Nescio",
+    "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quasi, adipisci fuga quas quia facere nam corporis ad ea sit odit labore repellat autem aliquam voluptatibus dignissimos eaque est?",
+    "user-pic": "robot-user.jpg"
+}, {
+    "user": "Nomen Nescio",
+    "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quasi, adipisci fuga quas quia facere nam corporis ad ea sit odit labore repellat autem aliquam voluptatibus dignissimos eaque est?",
+    "user-pic": "robot-user.jpg"
+}]

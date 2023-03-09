@@ -13,6 +13,7 @@ const Div = styled.div`
     ${({ bgImage }) => bgImage.length > 0 ? "background-color : rgba(0, 0, 0, 0.2);" : null}
     z-index: 1;
     position: relative;
+    border-radius: 2rem;
 `
 
 const Section = ({ section = "", cards, bgImage = "", bootstrapClasses = [] }) => {

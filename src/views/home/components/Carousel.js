@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import styled from "styled-components";
 
 import CarouselItem from "./CarouselItem";
 
@@ -9,6 +10,12 @@ const divideArray = (array, size) => {
     };
     return dividedArray;
 };
+
+const Button = styled.button`
+    height: fit-content;
+    margin: auto;
+`
+
 const Carousel = ({ cards }) => {
     const id = uuidv4();
     const carouselCards = divideArray(cards, 4);
@@ -17,14 +24,14 @@ const Carousel = ({ cards }) => {
             <div className="carousel-inner">
                 {carouselCards.map((cardsGroup, i) => <CarouselItem key={i} cards={cardsGroup} carouselIndex={i} />)}
             </div>
-            <button className="carousel-control-prev" type="button" data-bs-target={`#${id}`} data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button className="carousel-control-next" type="button" data-bs-target={`#${id}`} data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
+            <Button className="carousel-control-prev" style={{ left: "-10%" }} type="button" data-bs-target={`#${id}`} data-bs-slide="prev">
+                <span className="carousel-control-prev-icon btn btn-danger p-3" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+            </Button>
+            <Button className="carousel-control-next" style={{ right: "-10%" }} type="button" data-bs-target={`#${id}`} data-bs-slide="next">
+                <span className="carousel-control-next-icon btn btn-danger p-3" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+            </Button>
         </div>
     )
 }

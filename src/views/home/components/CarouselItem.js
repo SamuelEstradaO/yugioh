@@ -7,7 +7,7 @@ const Img = styled.img`
 
 const CarouselItem = ({ cards, carouselIndex }) => {
     return (
-        <div className={`carousel-item ${carouselIndex === 0 ? "active" : "null"}`}>
+        <div className={`carousel-item ${carouselIndex === 0 ? "active" : ""}`}>
             <div className="card-group">
                 {cards.map((card, i) => <Card key={i} card={card} />)}
             </div>
