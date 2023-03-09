@@ -24,7 +24,9 @@ const Banner = styled.div`
 `
 const BannerContent = styled.div`
     color: white;
-    @media(min-widht: 576px){
+    background-color: rgba(0,0,0,0.25); 
+    @media(min-width: 768px){
+        background-color: transparent; 
         background-image: linear-gradient(to right, #000, #000, #000, transparent);
     }
 `
@@ -58,17 +60,19 @@ const Home = () => {
     return (
         <>
             <Banner ref={ref} className="col-lg-12 col-sm-12 mt-0">
-                <BannerContent className="col-md-4 px-4">
+                <BannerContent className="col-sm-12 col-md-4 px-4 pb-sm-4">
                     <h2>
                         La comunidad en compra-venta de cartas más grande de México
                     </h2>
-                    <div className="col-12 ">
-                        <CardList to="/list" className="badge rounded-pill mt-4 py-3 px-4 align-self-center">
-                            LISTADO COMPLETO DE CARTAS
-                        </CardList>
-                    </div>
-                    <div className="col-12">
-                        <img src="/logo-banner.png" alt="cards deck banner" className="img-fluid my-4" />
+                    <div className="d-flex flex-sm-column-reverse flex-md-column flex-wrap">
+                        <div className="col-12 d-flex justify-content-center">
+                            <CardList to="/list" className="badge rounded-pill mt-4 py-3 px-4 align-self-center">
+                                LISTADO COMPLETO DE CARTAS
+                            </CardList>
+                        </div>
+                        <div className="col-12 d-flex justify-content-center">
+                            <img src="/logo-banner.png" alt="cards deck banner" className="img-fluid my-4" />
+                        </div>
                     </div>
                 </BannerContent>
             </Banner>
