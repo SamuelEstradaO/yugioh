@@ -21,7 +21,7 @@ const Carousel = ({ cards }) => {
     const carouselCards = divideArray(cards, 4);
     return (
         <div className="carousel carousel-dark slide" data-bs-ride="carousel" id={id}>
-            <div className="carousel-inner">
+            <div className="carousel-inner" style={{ minHeight: "495px" }}>
                 {carouselCards.map((cardsGroup, i) => <CarouselItem key={i} cards={cardsGroup} carouselIndex={i} />)}
             </div>
             <Button className="carousel-control-prev" style={{ left: "-10%" }} type="button" data-bs-target={`#${id}`} data-bs-slide="prev">

@@ -42,18 +42,23 @@ const Header = () => {
                 <NavBar className="col-lg-12 col-sm-12">
                     <Div className="alert d-sm-flex justify-content-between m-0">
                         <label>Actualizamos las tarjetas continuamente</label>
-                        <label>Comunicate con nosotros (461) 1234 5678 <FontAwesomeIcon icon={faSquareFacebook} /> <FontAwesomeIcon icon={faSquareInstagram} /></label>
+                        <label className="d-none d-sm-none d-md-block">Comunicate con nosotros (461) 1234 5678 <FontAwesomeIcon icon={faSquareFacebook} /> <FontAwesomeIcon icon={faSquareInstagram} /></label>
                     </Div>
-                    <Nav className="navbar navbar-expand-lg navbar-dark" ref={headerRef}>
+                    <Nav className="navbar navbar-expand-lg navbar-dark flex-md-nowrap" ref={headerRef}>
                         <Link className="navbar-brand" to="/">
                             <img src="/logo.png" alt="yu-gi-oh logo" width="280" />
                         </Link>
-                        <div className="justify-content-end collapse navbar-collapse d-none d-sm-none">
+                        <div className="justify-content-end collapse navbar-collapse d-none d-sm-none  d-md-flex">
                             <form className="form-inline">
                                 <input type="search" placeholder="Qué tarjeta estas buscando?" className="form-control rounded-pill" />
                             </form>
                             <Button className="badge rounded-pill ms-4 py-3 px-4"><FontAwesomeIcon icon={faUser} /> Iniciar sesión</Button>
                             <FontAwesomeIcon className="shopping-icon mx-4" icon={faCartShopping} />
+                        </div>
+                        <div className="col-12 d-md-none px-3">
+                            <form className="form-inline">
+                                <input type="search" placeholder="Qué tarjeta estas buscando?" className="form-control rounded-pill" />
+                            </form>
                         </div>
                     </Nav>
                 </NavBar>

@@ -24,7 +24,9 @@ const Banner = styled.div`
 `
 const BannerContent = styled.div`
     color: white;
-    background-image: linear-gradient(to right, #000, #000, #000, transparent); 
+    @media(min-widht: 576px){
+        background-image: linear-gradient(to right, #000, #000, #000, transparent);
+    }
 `
 
 const Home = () => {
