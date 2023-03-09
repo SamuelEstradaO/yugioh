@@ -18,7 +18,7 @@ const Reviews = () => {
                 <p className="col-lg-12 col-sm-12 mx-auto pb-4 h4">Los usuarios en <img src="/logo.png" alt="logo" style={{ width: "180px" }} /></p>
 
                 <div id="reviews" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner row pb-5">
+                    <div className="carousel-inner row pb-5 mx-auto">
                         {reviewsData.map((review, i) => <ReviewContent key={i} reviewData={review} index={i} />)}
                     </div>
                     <ol className="carousel-indicators" style={{ bottom: "auto" }}>
