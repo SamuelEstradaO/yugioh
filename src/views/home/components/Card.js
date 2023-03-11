@@ -19,7 +19,7 @@ const P = styled.p`
 
 const Card = ({ card }) => {
     return (
-        <CardContainer className="col-md-3 card p-2" style={{ minHeight: "480px" }}>
+        <CardContainer className="col-md-3 card p-2">
             <Img src={`/${card.image}`} className="card-img-top img-fluid" alt={card.card} />
             <div className="card-body">
                 <h4 className="card-title">{card.card}</h4>

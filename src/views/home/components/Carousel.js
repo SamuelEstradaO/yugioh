@@ -1,15 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 import styled from "styled-components";
+import * as bootstrap from "bootstrap";
 
 import CarouselItem from "./CarouselItem";
+import { useEffect, useRef, useState } from "react";
 
-const divideArray = (array, size) => {
-    const dividedArray = [];
-    for (let i = 0; i < array.length; i += size) {
-        dividedArray.push(array.slice(i, i + size));
-    };
-    return dividedArray;
-};
 
 const Button = styled.button`
     height: fit-content;
@@ -18,9 +13,33 @@ const Button = styled.button`
 
 const Carousel = ({ cards }) => {
     const id = uuidv4();
-    const carouselCards = divideArray(cards, 4);
+    const carouselContainer = useRef();
+    const [carouselCards, setCarouselCards] = useState([]);
+    const [arraySize, setArraySize] = useState(1)
+    useEffect(() => {
+        const divideArray = (array) => {
+            const width = window.innerWidth;
+            const size = width > 768 ? 4 : 1;
+            if (size !== arraySize) {
+                setArraySize(size);
+                const dividedArray = [];
+                for (let i = 0; i < array.length; i += size) {
+                    dividedArray.push(array.slice(i, i + size));
+                };
+                setCarouselCards(dividedArray);
+            }
+        };
+        divideArray(cards);
+        const eventListener = () => divideArray(cards)
+        window.addEventListener("resize", eventListener)
+
+        return () => {
+            window.removeEventListener("resize", eventListener)
+        }
+    }, [cards, arraySize]);
+
     return (
-        <div className="carousel carousel-dark slide" data-bs-ride="carousel" id={id}>
+        <div className="carousel slide" data-bs-ride="carousel" id={id} ref={carouselContainer}>
             <div className="carousel-inner" style={{ minHeight: "495px" }}>
                 {carouselCards.map((cardsGroup, i) => <CarouselItem key={i} cards={cardsGroup} carouselIndex={i} />)}
             </div>

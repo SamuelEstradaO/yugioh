@@ -5,7 +5,7 @@ export const data = [
         "price": 725.9,
         "stock": 19,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -23,7 +23,7 @@ export const data = [
         "price": 1760.86,
         "stock": 27,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -50,7 +50,7 @@ export const data = [
         "price": 1966.08,
         "stock": 21,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": true
     },
     {
@@ -77,7 +77,7 @@ export const data = [
         "price": 863.31,
         "stock": 28,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -86,7 +86,7 @@ export const data = [
         "price": 1796.31,
         "stock": 28,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -104,7 +104,7 @@ export const data = [
         "price": 1508.42,
         "stock": 9,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -113,7 +113,7 @@ export const data = [
         "price": 477.68,
         "stock": 3,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -140,7 +140,7 @@ export const data = [
         "price": 202.13,
         "stock": 36,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -158,7 +158,7 @@ export const data = [
         "price": 312.81,
         "stock": 7,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -176,7 +176,7 @@ export const data = [
         "price": 314.59,
         "stock": 4,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -194,7 +194,7 @@ export const data = [
         "price": 408.29,
         "stock": 36,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -212,7 +212,7 @@ export const data = [
         "price": 662.41,
         "stock": 18,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -284,7 +284,7 @@ export const data = [
         "price": 1366.77,
         "stock": 22,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -311,7 +311,7 @@ export const data = [
         "price": 524.93,
         "stock": 18,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -320,7 +320,7 @@ export const data = [
         "price": 560.88,
         "stock": 35,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -392,7 +392,7 @@ export const data = [
         "price": 1131.18,
         "stock": 6,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -419,7 +419,7 @@ export const data = [
         "price": 907.05,
         "stock": 3,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -428,7 +428,7 @@ export const data = [
         "price": 1516.73,
         "stock": 24,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     },
     {
@@ -446,7 +446,7 @@ export const data = [
         "price": 607.3,
         "stock": 32,
         "card": "Mago oscuro",
-        "image": "mago-oscuro.jpg",
+        "image": "mago-oscuro.webp",
         "deluxe": null
     }
 ];
