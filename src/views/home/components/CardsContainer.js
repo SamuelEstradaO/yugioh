@@ -2,8 +2,8 @@ import Card from "./Card"
 
 const CardsContainer = ({ cards }) => {
     return (
-        <div className="card-group">
-            {cards.map((card, i) => <Card key={i} card={card} />)}
+        <div className="d-flex justify-content-evenly">
+            {cards.map((card, i) => <Card key={i} card={card} carousel={false} />)}
         </div>
     )
 }

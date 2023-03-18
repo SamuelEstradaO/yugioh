@@ -18,3 +18,10 @@ export const DivWithImage = styled.div`
     background-repeat: no-repeat;
     border-radius: 2rem
 `
+export const Banner = styled.div`
+    z-index: 0;
+    position: relative;
+    background-image: url("/main-banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+`

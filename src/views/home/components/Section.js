@@ -20,7 +20,7 @@ const Section = ({ section = "", cards, bgImage = "", bootstrapClasses = [] }) =
     return (
         <DivWithImage bgImage={bgImage} className={`${bootstrapClasses.join(" ")}`}>
             <Div className="container p-4" bgImage={bgImage}>
-                {section.length > 0 && <h3 className={`mt-2`}>{section}</h3>}
+                {section.length > 0 && <h3 className={`mt-2 ${cards.length <= 4 ? "text-center" : ""}`}>{section}</h3>}
                 {cards.length > 4 && <Carousel cards={cards} />}
                 {cards.length <= 4 && <CardsContainer cards={cards} />}
             </Div>

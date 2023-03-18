@@ -10,17 +10,11 @@ import Section from "./components/Section";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "../components/Footer";
+import { Banner } from "../../theme";
 
 const CardList = styled(Link)`
     background-color: rgb(225, 29, 53); 
     text-decoration: none;
-`
-const Banner = styled.div`
-    z-index: 0;
-    position: relative;
-    background-image: url("/main-banner.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
 `
 const BannerContent = styled.div`
     color: white;
@@ -82,7 +76,7 @@ const Home = () => {
             {!isFetchingLastCards && lastCards.length > 0 && <Section section="Agregado recientemente" bgImage="dragon-bckg.jpg" cards={lastCards} />}
             {!isFetchingDeluxeCards && deluxeCards.length > 0 && <Section section="Edicion de lujo" bgImage="bckg.jpg" cards={deluxeCards} bootstrapClasses={["mt-5"]} />}
             <img src="/banner.jpg" alt="" className="img-fluid my-5" />
-            {!isFetchingCards && cards.length > 0 && <Section cards={cards.slice(0, 12)} bootstrapClasses={["mt-5"]} />}
+            {!isFetchingCards && cards.length > 0 && <Section cards={cards.slice(0, 12)} />}
             <div className="col-lg-12 col-md-12 col-sm-12 my-5 d-flex align-content-center flex-wrap">
                 <button className="btn rounded-pill btn-danger p-3 mx-auto"><Link to="/list" style={{ textDecoration: "none", color: "white" }}>Ver más cartas</Link></button>
             </div>

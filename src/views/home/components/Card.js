@@ -6,8 +6,8 @@ const Img = styled.img`
 `
 const CardContainer = styled(Link)`
     background-color: transparent;
-    border: 2px solid;
-    border-image: linear-gradient(to top, #fff34b, rgba(0,0,0,0)) 1 20%;
+    ${({ carousel }) => carousel ? "border: 2px solid;" : ""}
+    ${({ carousel }) => carousel ? "border-image: linear-gradient(to top, #fff34b, rgba(0,0,0,0)) 1 20%;" : ""}
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
     flex: 0 1 auto!important;
     text-decoration: none;
@@ -17,10 +17,10 @@ const P = styled.p`
     color: #fff34b;
 `
 
-const Card = ({ card }) => {
+const Card = ({ card, carousel = true }) => {
     return (
-        <CardContainer className="col-md-3 card p-2">
-            <Img src={`/${card.image}`} className="card-img-top img-fluid" alt={card.card} />
+        <CardContainer className="col-md-3 card p-2" carousel={carousel}>
+            <Img src={`/${card.image}`} className="card-img-top img-fluid mx-auto" style={{ width: `${carousel ? "80%" : "95%"}` }} alt={card.card} />
             <div className="card-body">
                 <h4 className="card-title">{card.card}</h4>
                 <p className="card-subtitle">Estado: {card.status}</p>
