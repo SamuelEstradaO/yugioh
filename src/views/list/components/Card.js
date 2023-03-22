@@ -20,14 +20,14 @@ const P = styled.p`
 const Card = ({ card }) => {
     return (
         <CardContainer className="col-md-4 col-6 card p-2 mb-3">
-            <Link to={`/list/${card.id}`}><Img src={`/${card.image}`} className="card-img-top img-fluid mx-auto" alt={card.card} /></Link>
+            <Link to={`/list/details?cardId=${card.id}`}><Img src={`/${card.image}`} className="card-img-top img-fluid mx-auto" alt={card.card} /></Link>
             <div className="card-header">
                 <h4 className="card-title">{card.card}</h4>
             </div>
             <div className="card-body">
-                <p >Estado: {card.status}</p>
-                <p>Stock: {card.stock} disponibles</p>
-                <p className="card-subtitle">Desde ${card.price} MXN</p>
+                <p className="m-0">Estado: {card.status}</p>
+                <p className="m-0">Stock: {card.stock} disponibles</p>
+                <p className="card-subtitle m-0">Desde ${card.price} MXN</p>
             </div>
             <div className="card-footer" style={{ backgroundColor: "transparent" }}>
                 <button className="btn btn-danger"><FontAwesomeIcon icon={faCartShopping} />Agregar al carrito</button>

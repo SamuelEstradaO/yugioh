@@ -6,7 +6,9 @@ import {
     successFetchingDeluxeCards,
     successFetchingLastCards,
     startFetchingCards,
-    successFetchingCards
+    successFetchingCards,
+    startFetchingCard,
+    successFetchingCard
 } from "../actions/card";
 
 const initialState = {
@@ -17,7 +19,8 @@ const initialState = {
     isFetchingDeluxeCards: false,
     deluxeCards: [],
     isFetchingCards: [],
-    cards: []
+    cards: [],
+
 };
 
 const cardReducer = createReducer(initialState, builder => {
@@ -34,6 +37,20 @@ const cardReducer = createReducer(initialState, builder => {
                 ...state,
                 isFetchingCards: false,
                 cards: action.payload.cardsData
+            }
+        })
+        .addCase(startFetchingCard.toString(), (state, action) => {
+            return {
+                ...state,
+                isFetchingCard: true,
+                cardInfo: {}
+            }
+        })
+        .addCase(successFetchingCard.toString(), (state, action) => {
+            return {
+                ...state,
+                isFetchingCard: false,
+                cardInfo: action.payload.cardData
             }
         })
         .addCase(startFetchingLastCards.toString(), (state, action) => {

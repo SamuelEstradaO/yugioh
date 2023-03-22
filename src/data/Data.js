@@ -463,4 +463,21 @@ export const reviewsData = [{
     "user": "Nomen Nescio",
     "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla tenetur quasi, adipisci fuga quas quia facere nam corporis ad ea sit odit labore repellat autem aliquam voluptatibus dignissimos eaque est?",
     "user-pic": "robot-user.jpg"
-}]
+}];
+
+export const cardData = {
+    sellers: 11,
+    deck: "Starter deck",
+    line: "Yu-Gi-Oh Duel master",
+    rarity: "Ultra Rare",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod in omnis fugiat vitae nam ea enim voluptate est veniam beatae quam rerum illo, soluta deleniti voluptatibus sit consequuntur autem aliquid?"
+}
+
+export const sellerInfo = {
+    status: "Bueno",
+    user: "Yo merito",
+    sold: 5,
+    price: 400,
+    userPic: "robot-user.png",
+    rating: 4
+}

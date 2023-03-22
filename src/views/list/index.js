@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useContext, useEffect, useRef, useState } from "react";
 
-import { Banner, DivWithImage as ImageDiv } from "../../theme";
+import { Banner, BgDiv, DivWithImage as ImageDiv } from "../../theme";
 import { HeaderContext } from "../components/Header";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { fetchCards } from "../../redux/actions/card";
@@ -9,17 +9,12 @@ import { Link } from "react-router-dom";
 import FormCheck from "./components/FormCheck";
 import { cardsInfoSel, isFetchingCardsSel } from "../../redux/selectors";
 import Card from "./components/Card";
+import BreadCrumb from "../components/BreadCrumb";
 
 const DivWithImage = styled(ImageDiv)`
     border-radius: 0;
 `
-const Div = styled.div`
-    background: radial-gradient(circle at top left,transparent 9%, #ffa2a2 10% ,#ffa2a2 15% , transparent 16%) , radial-gradient(circle at bottom left,transparent 9%, #ffa2a2 10% ,#ffa2a2 15% , transparent 16%), radial-gradient(circle at top right ,transparent 9%, #ffa2a2 10% ,#ffa2a2 15% , transparent 16%) , radial-gradient(circle at bottom right,transparent 9%, #ffa2a2 10% ,#ffa2a2 15% , transparent 16%),radial-gradient(circle, transparent 25%, #ffffff  26%),linear-gradient(45deg, transparent 46%, #ffa2a2 47%, #ffa2a2 52%, transparent 53%), linear-gradient(135deg, transparent 46%, #ffa2a2 47%, #ffa2a2 52%, transparent 53%);
-    background-size: 3em 3em;
-    background-color: #ffffff;
-    opacity: 1;
-    color: black;
-`
+
 const Input = styled.input`
     position: relative;
     &:before{
@@ -43,7 +38,7 @@ const languages = ["Todos", "Espanol", "Ingles", "Frances", "Italiano", "Chino"]
 const List = () => {
     const ref = useRef();
     const dispatch = useDispatch();
-    const [minValue, setMinValue] = useState(0);
+    const [minValue, setMinValue] = useState(1);
     const [maxValue, setMaxValue] = useState(2000);
     const { cards } = useSelector(cardsInfoSel);
     const isFetchingCards = useSelector(isFetchingCardsSel, shallowEqual);
@@ -56,9 +51,9 @@ const List = () => {
         dispatch(fetchCards());
         const setBannerImageTop = () => {
             const headerHeight = headerRef.current.offsetHeight;
-            ref.current.style.top = `- ${headerHeight} px`;
-            ref.current.style.paddingTop = `${headerHeight} px`;
-            ref.current.style.marginBottom = `- ${headerHeight} px`;
+            ref.current.style.top = `-${headerHeight}px`;
+            ref.current.style.paddingTop = `${headerHeight}px`;
+            ref.current.style.marginBottom = `-${headerHeight}px`;
         }
         setBannerImageTop();
         window.addEventListener('resize', setBannerImageTop);
@@ -74,14 +69,9 @@ const List = () => {
                     Listado completo de cartas
                 </h2>
             </Banner>
-            <Div className="col-lg-12 col-sm-12 container">
+            <BgDiv className="col-lg-12 col-sm-12 container">
                 <div className="col-12 row">
-                    <nav className="col-lg-12 col-sm-12 ps-4 py-4" aria-label="breadcrumb">
-                        <ol className="breadcrumb mb-0">
-                            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-                            <li className="breadcrumb-item active" aria-current="page">List</li>
-                        </ol>
-                    </nav>
+                    <BreadCrumb />
                     <div className="col-12 d-md-none">
                         <button type="button" className="btn rounded-pill btn-danger py-2 mb-4 w-100" style={{ fontSize: "1.5rem" }}
                             data-bs-toggle="modal"
@@ -111,7 +101,7 @@ const List = () => {
                                                 </label>
                                                 <div className="col-12">
                                                     <label hmtlFor="minPrice" className="form-label">Precio minimo: {minValue}</label>
-                                                    <Input type="range" className="form-range px-3 mb-4" id="minPrice" min="0" max={parseInt(maxValue) - 1} onChange={e => handleChange(e, setMinValue)} value={minValue} />
+                                                    <Input type="range" className="form-range px-3 mb-4" id="minPrice" min="1" max={parseInt(maxValue) - 1} onChange={e => handleChange(e, setMinValue)} value={minValue} />
                                                     <label hmtlFor="maxPrice" className="form-label">Precio maximo: {maxValue}</label>
                                                     <Input type="range" className="form-range px-3 mb-4" id="maxPrice" min={parseInt(minValue) + 1} max="2000" onChange={e => handleChange(e, setMaxValue)} value={maxValue} />
                                                 </div>
@@ -148,7 +138,7 @@ const List = () => {
                                     </label>
                                     <div className="col-12">
                                         <label hmtlFor="minPrice" className="form-label">Precio minimo: {minValue}</label>
-                                        <Input type="range" className="form-range px-3 mb-4" id="minPrice" min="0" max={parseInt(maxValue) - 1} onChange={e => handleChange(e, setMinValue)} value={minValue} />
+                                        <Input type="range" className="form-range px-3 mb-4" id="minPrice" min="1" max={parseInt(maxValue) - 1} onChange={e => handleChange(e, setMinValue)} value={minValue} />
                                         <label hmtlFor="maxPrice" className="form-label">Precio maximo: {maxValue}</label>
                                         <Input type="range" className="form-range px-3 mb-4" id="maxPrice" min={parseInt(minValue) + 1} max="2000" onChange={e => handleChange(e, setMaxValue)} value={maxValue} />
                                     </div>
@@ -176,7 +166,7 @@ const List = () => {
                         </div>
                     </div>
                 </div>
-            </Div>
+            </BgDiv>
         </>
     )
 }
