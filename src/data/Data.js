@@ -478,6 +478,5 @@ export const sellerInfo = {
     user: "Yo merito",
     sold: 5,
     price: 400,
-    userPic: "robot-user.png",
     rating: 4
 }
