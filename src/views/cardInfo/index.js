@@ -49,7 +49,7 @@ const CardInfo = () => {
                 <div className="col-12 col-md-7 row px-3 g-0" style={{ height: "fit-content" }}>
                     <div className="col-12 row">
                         <div className="col-12 col-md-8 d-flex justify-content-start align-content-center h-auto" style={{ height: "fit-content" }}>
-                            <h1 className="m-0" style={{ height: "fit-content" }}>{cardInfo.card}</h1>
+                            <h1 className="m-0 text-uppercase" style={{ height: "fit-content" }}>{cardInfo.card}</h1>
                         </div>
                         <div className="d-none d-md-flex col-md-4 align-content-center flex-wrap justify-content-end">
                             <p className="m-0" >
@@ -61,7 +61,16 @@ const CardInfo = () => {
                         <img src={`/${cardInfo.image}`} alt={cardInfo.card} className="img-fluid" width={232} />
                     </Div>
                     <Details cardInfo={cardInfo} />
-
+                    <Div className="card col-12 my-3">
+                        <div className="card-body">
+                            <h5 className="card-title">
+                                Descripción de la carta
+                            </h5>
+                            <p className="card-text justify">
+                                {cardInfo.description}
+                            </p>
+                        </div>
+                    </Div>
                 </div>
                 <div className="col-12 col-md-5 px-3">
                     <p className="col-12 d-block d-md-none text-center mt-3 mb-1">
