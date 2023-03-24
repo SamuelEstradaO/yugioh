@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const RestorePassword = ({ setView }) => {
 
     return (
-        <div className="col-6 g-0 p-4" style={{ color: "black" }}>
+        <div className="col-12 col-md-6 g-0 p-4" style={{ color: "black" }}>
             <button type="button" className="btn-close position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
             <img src="/logoblack.png" alt="mercado tcg" className="img-fluid mx-auto d-block" />
             <b className="text-start"><Link onClick={setView}><FontAwesomeIcon icon={faChevronLeft} /></Link> Restablecer contraseña</b>
