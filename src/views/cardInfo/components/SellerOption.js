@@ -12,10 +12,10 @@ const SellerOption = ({ sellerInfo }) => {
         sellerInfo.rating >= i ? rating.push(<FontAwesomeIcon icon={faStarSolid} style={{ color: "rgba(249, 205, 63, 1)" }} key={i} />) : rating.push(<FontAwesomeIcon icon={faStar} key={i} />)
     }
     return (
-        <div className="card bg-danger-subtle mb-3">
-            <div className="row g-0">
-                <div className="col-sm-12 col-md-4 p-3">
-                    <img src={`/${sellerInfo.cardPic}`} alt="Card Pic" className="img-fluid" />
+        <div className="card bg-danger-subtle mb-3 py-3">
+            <div className="row g-0 justify-content-center justify-content-md-start">
+                <div className="col-12 col-md-4 d-flex">
+                    <img src={`/${sellerInfo.cardPic}`} alt="Card Pic" className="my-auto mx-auto mx-md-0 mx-lg-auto" width="80px" />
                 </div>
                 <div className="col-8 row g-0">
                     <div className="col-12 col-md-7">

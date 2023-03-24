@@ -19,7 +19,7 @@ const P = styled.p`
 
 const Card = ({ card, carousel = true }) => {
     return (
-        <CardContainer className="col-md-3 card p-2" carousel={carousel}>
+        <CardContainer className="col-md-3 card p-2" carousel={carousel} to={`/list/details?cardId=${card.id}`}>
             <Img src={`/${card.image}`} className="card-img-top img-fluid mx-auto" style={{ width: `${carousel ? "80%" : "95%"}` }} alt={card.card} />
             <div className="card-body">
                 <h4 className="card-title">{card.card}</h4>

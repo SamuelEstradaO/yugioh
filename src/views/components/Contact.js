@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { DivWithImage as ImageDiv } from "../../../theme";
+import { DivWithImage as ImageDiv } from "../../theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight, faEnvelope, faMobileScreenButton, faUser, faUserAstronaut } from "@fortawesome/free-solid-svg-icons";
 

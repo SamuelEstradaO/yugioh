@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSquareInstagram, faSquareFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import LogInModal from "./LogInModal";
 
 
 const Div = styled.div`
@@ -39,7 +40,7 @@ const Header = () => {
     return (
         <HeaderContext.Provider value={headerRef}>
             <div className="container">
-                <NavBar className="col-lg-12 col-sm-12">
+                <NavBar className="col-lg-12 col-sm-12 py-0">
                     <Div className="alert d-sm-flex justify-content-between m-0">
                         <label>Actualizamos las tarjetas continuamente</label>
                         <label className="d-none d-sm-none d-md-block">Comunicate con nosotros (461) 1234 5678 <FontAwesomeIcon icon={faSquareFacebook} /> <FontAwesomeIcon icon={faSquareInstagram} /></label>
@@ -52,7 +53,8 @@ const Header = () => {
                             <form className="form-inline">
                                 <input type="search" placeholder="Qué tarjeta estas buscando?" className="form-control rounded-pill" />
                             </form>
-                            <Button className="badge rounded-pill ms-4 py-3 px-4"><FontAwesomeIcon icon={faUser} /> Iniciar sesión</Button>
+                            <Button className="badge rounded-pill ms-4 py-3 px-4" data-bs-toggle="modal"
+                                data-bs-target="#logInModal"><FontAwesomeIcon icon={faUser} /> Iniciar sesión</Button>
                             <FontAwesomeIcon className="shopping-icon mx-4" icon={faCartShopping} />
                         </div>
                         <div className="col-12 d-md-none px-3">
@@ -62,6 +64,7 @@ const Header = () => {
                         </div>
                     </Nav>
                 </NavBar>
+                <LogInModal />
                 <Outlet />
             </div>
         </HeaderContext.Provider>
