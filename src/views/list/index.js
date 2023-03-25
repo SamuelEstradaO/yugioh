@@ -50,7 +50,7 @@ const List = () => {
     useEffect(() => {
         dispatch(fetchCards());
         const setBannerImageTop = () => {
-            const headerHeight = headerRef.current.offsetHeight > 60 ? headerRef.current.offsetHeight : 60;
+            const headerHeight = headerRef.current.offsetHeight + 20;
             ref.current.style.top = `-${headerHeight}px`;
             ref.current.style.paddingTop = `${headerHeight}px`;
             ref.current.style.marginBottom = `-${headerHeight}px`;
