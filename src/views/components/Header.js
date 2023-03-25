@@ -45,7 +45,7 @@ const Header = () => {
                         <label>Actualizamos las tarjetas continuamente</label>
                         <label className="d-none d-sm-none d-md-block">Comunicate con nosotros (461) 1234 5678 <FontAwesomeIcon icon={faSquareFacebook} /> <FontAwesomeIcon icon={faSquareInstagram} /></label>
                     </Div>
-                    <Nav className="navbar navbar-expand-lg navbar-dark flex-md-nowrap" ref={headerRef}>
+                    <Nav className="navbar navbar-expand-lg navbar-dark flex-md-nowrap py-0" ref={headerRef}>
                         <Link className="navbar-brand" to="/">
                             <img src="/logo.png" alt="yu-gi-oh logo" width="280" />
                         </Link>
