@@ -49,7 +49,7 @@ const Header = () => {
                         <Link className="navbar-brand" to="/">
                             <img src="/logo.png" alt="yu-gi-oh logo" width="280" />
                         </Link>
-                        <div className="justify-content-end collapse navbar-collapse d-none d-sm-none  d-md-flex">
+                        <div className="justify-content-end collapse navbar-collapse d-none d-sm-none  d-md-flex py-2">
                             <form className="form-inline">
                                 <input type="search" placeholder="Qué tarjeta estas buscando?" className="form-control rounded-pill" />
                             </form>
