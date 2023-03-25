@@ -21,9 +21,9 @@ const LogIn = ({ setView }) => {
                 <button type="button" className="btn btn-danger rounded-pill"><FontAwesomeIcon icon={faUser} /> Iniciar sesión</button>
             </div>
             <div className="col-12 text-end">
-                <Link>¿Olvidaste tu contraseña?</Link>
+                <Link onClick={setView}>¿Olvidaste tu contraseña?</Link>
                 <br />
-                <Link onClick={setView}>¿No tienes cuenta? Registrate!</Link>
+                <Link>¿No tienes cuenta? Registrate!</Link>
             </div>
         </div>
     )
