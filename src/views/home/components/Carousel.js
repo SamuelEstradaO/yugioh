@@ -15,7 +15,7 @@ const Carousel = ({ cards }) => {
     const id = uuidv4();
     const carouselContainer = useRef();
     const [carouselCards, setCarouselCards] = useState([]);
-    const [arraySize, setArraySize] = useState(1)
+    const [arraySize, setArraySize] = useState(0)
     useEffect(() => {
         const divideArray = (array) => {
             const width = window.innerWidth;
