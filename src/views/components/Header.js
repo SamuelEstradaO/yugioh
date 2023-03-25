@@ -57,7 +57,7 @@ const Header = () => {
                                 data-bs-target="#logInModal"><FontAwesomeIcon icon={faUser} /> Iniciar sesión</Button>
                             <FontAwesomeIcon className="shopping-icon mx-4" icon={faCartShopping} />
                         </div>
-                        <div className="col-12 d-md-none px-3">
+                        <div className="col-12 d-md-none px-3 pb-3">
                             <form className="form-inline">
                                 <input type="search" placeholder="Qué tarjeta estas buscando?" className="form-control rounded-pill" />
                             </form>
